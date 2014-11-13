@@ -1,0 +1,30 @@
+#!/bin/sh
+
+  RPM_SOURCE_DIR="/home/lherrada/rpms/mypwd/SOURCES"
+  RPM_BUILD_DIR="/home/lherrada/rpms/mypwd/BUILD"
+  RPM_OPT_FLAGS="-O2 -g"
+  RPM_ARCH="i386"
+  RPM_OS="linux"
+  export RPM_SOURCE_DIR RPM_BUILD_DIR RPM_OPT_FLAGS RPM_ARCH RPM_OS
+  RPM_DOC_DIR="/usr/share/doc"
+  export RPM_DOC_DIR
+  RPM_PACKAGE_NAME="mypwd"
+  RPM_PACKAGE_VERSION="0.1"
+  RPM_PACKAGE_RELEASE="1"
+  export RPM_PACKAGE_NAME RPM_PACKAGE_VERSION RPM_PACKAGE_RELEASE
+  RPM_BUILD_ROOT="/home/lherrada/rpmbuild/BUILDROOT/mypwd-0.1-1.i386"
+  export RPM_BUILD_ROOT
+  
+  
+  set -x
+  umask 022
+  cd "/home/lherrada/rpms/mypwd/BUILD"
+cd 'mypwd-0.1'
+install --directory $RPM_BUILD_ROOT/bin
+install -m 0744 mypwd $RPM_BUILD_ROOT/bin
+#make install
+
+
+
+
+exit 0
