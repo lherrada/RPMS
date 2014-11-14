@@ -28,7 +28,7 @@ make all
 
 %install
 install --directory $RPM_BUILD_ROOT/bin
-install -m 0744 mypwd $RPM_BUILD_ROOT/bin
+install -m 0755 mypwd $RPM_BUILD_ROOT/bin
 #make install
 
 %clean
