@@ -12,6 +12,7 @@ Group: Basic Tools
 License: Herrada License
 Source0: coredump_viewer-%{version}.tar.gz
 Packager: Luis Herrada <lherrada@yahoo.com> 
+Requires: gdb
 BuildRoot:  %(mktemp -ud %{_tmppath}/%{name}-%{version}-%{release}-XXXXXXX)
 
 %description
